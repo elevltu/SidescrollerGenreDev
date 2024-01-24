@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && onGround /*&& (Mathf.Floor(verticalSpeedLastFrame * 1000) / 1000) == 0 && (Mathf.Floor(rb.velocity.y * 1000) / 1000 == 0)*/)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && onGround /*&& (Mathf.Floor(verticalSpeedLastFrame * 1000) / 1000) == 0 && (Mathf.Floor(rb.velocity.y * 1000) / 1000 == 0)*/)
         {
             rb.AddForce(new Vector2(0, .8f) * jumpForce, ForceMode2D.Impulse);
             

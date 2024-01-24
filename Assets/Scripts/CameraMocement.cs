@@ -15,13 +15,13 @@ public class CameraMocement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.position.y > 0)
+        if (player.position.y > 0.3)
         {
             selfCamera.position = new Vector2(player.position.x, player.position.y);
         }
         else
         {
-            selfCamera.position = new Vector2(player.position.x, 0);
+            selfCamera.position = new Vector2(player.position.x, 0.3f);
         }
        
     }
