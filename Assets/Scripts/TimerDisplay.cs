@@ -15,6 +15,11 @@ public class TimerDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerDisplayer.text = ((int)(Timer.timer / 60) + ":" + (int)(Timer.timer % 60));
+        if (Timer.timer % 60 < 10)
+        {
+            timerDisplayer.text = ((int)(Timer.timer / 60) + ":0" + (int)(Timer.timer % 60));
+        } else{
+            timerDisplayer.text = ((int)(Timer.timer / 60) + ":" + (int)(Timer.timer % 60));
+        }
     }
 }

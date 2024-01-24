@@ -21,7 +21,7 @@ public class DamageCollision : MonoBehaviour
         {
             if (!Timer.hasBeenDamagedRecently)
             {
-                Timer.timer -= 3;
+                Timer.timer -= 5;
                 Timer.hasBeenDamagedRecently = true;
             }
         }
