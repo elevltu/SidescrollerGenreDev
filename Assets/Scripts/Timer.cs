@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
         if (!currentlyInulnerable)
         {
             currentlyInulnerable = true;
-            await Task.Delay(1500);
+            await Task.Delay(600);
             hasBeenDamagedRecently = false;
             currentlyInulnerable = false;
         }

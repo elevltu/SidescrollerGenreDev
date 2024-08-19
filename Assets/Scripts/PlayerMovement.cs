@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private float verticalSpeedLastFrame;
     public int jumpForce;
     private bool onGround;
+    [SerializeField] private int maxSpeed;
     List<GameObject> currentCollisions = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,19 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            //rb.velocity = new Vector2(-speed, rb.velocity.y);
+            //rb.AddForce(new Vector2(-speed, 0));
+            if (!(Mathf.Abs(rb.velocity.x) > maxSpeed)){
+                rb.AddForce(new Vector2(-speed, 0));
+            }
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            //rb.velocity = new Vector2(speed, rb.velocity.y);
+            if (!(Mathf.Abs(rb.velocity.x) > maxSpeed))
+            {
+                rb.AddForce(new Vector2(speed, 0));
+            }
         }
         /*if(!((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))))){
             rb.velocity = new Vector2(0, rb.velocity.y);

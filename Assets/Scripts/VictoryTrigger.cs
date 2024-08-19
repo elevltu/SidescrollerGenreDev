@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class VictoryTrigger : MonoBehaviour
 {
+    public string sceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class VictoryTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene("victory screen");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
